@@ -10,3 +10,18 @@ Telegram-бот «Metallica» — твой карманный музыкальн
 • Показывать тексты песен (Lyrics) по запросу.
 • Подбирать случайный трек, если не знаешь, что послушать.
 • Работать в inline-режиме (можно отправить песню другу в любой чат, просто набрав @имя_бота и название трека).
+
+Дизайн: сочетание цветов красное и черное.
+Библиотеки:
+import random
+import tempfile
+import unittest
+from pathlib import Path
+
+import numpy as np
+
+from core.augment import make_query
+from core.text import MAX_LEN, base_title, decode, encode, normalize, switch_layout, translit
+from ml.dataset import build_dataset
+from ml.make_demo_data import make_demo_catalog
+from ml.metrics import recall_at_k, suggest_min_score
